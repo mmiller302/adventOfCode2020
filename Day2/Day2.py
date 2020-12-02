@@ -7,10 +7,10 @@ psplit = passwords.split()
 def part1():
     valid = 0
     for r in range(0,len(psplit),3):
-        entry = psplit[r]
-        dash = entry.find('-')
-        min_req = entry[:dash]
-        max_req = entry[dash+1:]
+        policy = psplit[r]
+        dash = policy.find('-')
+        min_req = policy[:dash]
+        max_req = policy[dash+1:]
         letter_req = psplit[r+1][0]
         pwd = psplit[r+2]
 
@@ -24,10 +24,10 @@ def part1():
 def part2():
     valid = 0
     for r in range(0,len(psplit),3):
-        entry = psplit[r]
-        dash = entry.find('-')
-        min_req = entry[:dash]
-        max_req = entry[dash+1:]
+        policy = psplit[r]
+        dash = policy.find('-')
+        min_req = policy[:dash]
+        max_req = policy[dash+1:]
         letter_req = psplit[r+1][0]
         pwd = psplit[r+2]
 
