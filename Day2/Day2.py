@@ -11,16 +11,15 @@ def part1():
         dash = entry.find('-')
         min_req = entry[:dash]
         max_req = entry[dash+1:]
-        letter_req = psplit[r+1]
-        l = letter_req[0]
+        letter_req = psplit[r+1][0]
         pwd = psplit[r+2]
 
-        if l in pwd:
+        if letter_req in pwd:
             counts = Counter(pwd)
-            if counts[l] >= int(min_req) and counts[l] <= int(max_req):
+            if counts[letter_req] >= int(min_req) and counts[letter_req] <= int(max_req):
                 valid += 1
     
-    print(valid)            
+    print('Part 1: %s' % valid)            
 
 def part2():
     valid = 0
@@ -29,17 +28,13 @@ def part2():
         dash = entry.find('-')
         min_req = entry[:dash]
         max_req = entry[dash+1:]
-        letter_req = psplit[r+1]
-        l = letter_req[0]
+        letter_req = psplit[r+1][0]
         pwd = psplit[r+2]
 
-        if l in pwd:
+        if letter_req in pwd:
             c1 = pwd[int(min_req) -1]
             c2 = pwd[int(max_req) -1]
-            if (l in c1) ^ (l in c2):
+            if (letter_req in c1) ^ (letter_req in c2):
                 valid += 1
     
-    print(valid)
-    
-part1()
-part2()
+    print('Part 2: %s' % valid)
