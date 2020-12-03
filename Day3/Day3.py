@@ -16,11 +16,10 @@ def trees(right,down):
         
             #reached a point where we'll go beyond the line length, drop down to nline
             if start >= (len(fline) - right):
-                start = right - (len(fline) - start)
-                move_down = nline[start]                
+                start = right - (len(fline) - start)                
             else:
                 start += right
-                move_down = nline[start]
+            move_down = nline[start]
             if '#' in move_down:
                     num_trees += 1
             break
