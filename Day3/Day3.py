@@ -14,7 +14,7 @@ def trees(right,down):
                 fline = nline
             nline = r[r.index(fline)+down]
         
-            #reached a point where we'll go beyond the line length, drop down to nline
+            #reached a point where we'll go beyond the line length, adjust start position accordingly
             if start >= (len(fline) - right):
                 start = right - (len(fline) - start)                
             else:
