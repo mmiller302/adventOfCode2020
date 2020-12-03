@@ -14,14 +14,12 @@ def trees(right,down):
                 fline = nline
             nline = r[r.index(fline)+down]
         
+            #reached a point where we'll go beyond the line length, drop down to nline
             if start >= (len(fline) - right):
-                fline = nline
                 start = right - (len(fline) - start)
-                move_down = fline[start]                
+                move_down = nline[start]                
             else:
-                line_start = fline[start]
                 start += right
-                move_right = fline[start]
                 move_down = nline[start]
             if '#' in move_down:
                     num_trees += 1
