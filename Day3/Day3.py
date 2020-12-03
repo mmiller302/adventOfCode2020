@@ -24,3 +24,4 @@ def trees(right,down):
                     num_trees += 1
             break
     print('Slope is R%s, D%s. Trees = %s' % (right,down,num_trees))
+    
