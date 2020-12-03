@@ -7,7 +7,7 @@ def trees(right,down):
     start = 0
     nline = ""
     for i in range(1,len(r),down):
-        while i < len(r)-(down):
+        while i < len(r)-down:
             if i == 1:
                 fline = r[1]
             else:
