@@ -12,8 +12,7 @@ def trees(right,down):
                 fline = r[1]
             else:
                 fline = nline
-            fidx = r.index(fline)
-            nline = r[fidx+down]
+            nline = r[r.index(fline)+down]
         
             if start >= (len(fline) - right):
                 fline = nline
