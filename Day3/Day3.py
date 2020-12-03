@@ -6,10 +6,10 @@ def trees(right,down):
     num_trees = 0
     start = 0
     nline = ""
-    for i in range(0,len(r),down):
-        while i < len(r)-(down+1):
-            if i == 0:
-                fline = r[i+1]
+    for i in range(1,len(r),down):
+        while i < len(r)-(down):
+            if i == 1:
+                fline = r[1]
             else:
                 fline = nline
             fidx = r.index(fline)
