@@ -1,4 +1,4 @@
-#this is pretty ugly but it works
+#might be ugly but it works
 
 r = tree_map.splitlines()
 
