@@ -1,25 +1,30 @@
 #might be ugly but it works
 
-r = tree_map.splitlines()
+def get_input():
+    with open('input.txt', 'r') as input_file:
+        input = input_file.read()
+    return input
+
+t = get_input().splitlines()
 
 def trees(right,down):
     num_trees = 0
     start = 0
-    nline = ""
-    for i in range(1,len(r),down):
-        while i < len(r)-down:
+    n_line = ""
+    for i in range(1,len(t),down):
+        while i < len(t)-down:
             if i == 1:
-                fline = r[1]
+                f_line = t[1]
             else:
-                fline = nline
-            nline = r[r.index(fline)+down]
+                f_line = n_line
+            n_line = t[t.index(f_line)+down]
         
             #reached a point where we'll go beyond the line length, adjust start position accordingly
-            if start >= (len(fline) - right):
-                start = right - (len(fline) - start)                
+            if start >= (len(f_line) - right):
+                start = right - (len(f_line) - start)                
             else:
                 start += right
-            move_down = nline[start]
+            move_down = n_line[start]
             if '#' in move_down:
                     num_trees += 1
             break
