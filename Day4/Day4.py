@@ -23,13 +23,10 @@ def check_passports(validation=False):
             if policy_check(entry):
                 valid_entries += 1
         else:
-            valid = 0
-            for e in range(len(entry)):
-                #TODO: switch to using 'all' + list comprehension for this 
-                if entry[e].split(':')[0] in fields:
-                    valid += 1
-            if valid >= 7:
+            field_test = [x.split(':')[0] for x in entry if x.split(':')[0] in fields]
+            if len(field_test) >= len(fields):
                 valid_entries += 1
+    print('Valid passports: %s' % valid_entries)
             
 def policy_check(data_entry):
     valid_fields = []
