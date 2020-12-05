@@ -9,13 +9,13 @@ def row(row_data):
     position = []
     row_positions = [rw for rw in range(128)]
     for r in range(len(row_data)):
-        # F means take LOWER half of data e.x. 0 - 63
+        # F means take LOWER half e.x. 0 - 63
         if 'F' in row_data[r]:
             if r == 0:
                 position = row_positions[:(int(len(row_positions)/2))]
             else:
                 position = position[:(int(len(position)/2))]
-        # B means take UPPER half of data e.x. 64 - 127
+        # B means take UPPER half e.x. 64 - 127
         else:
             if r == 0:
                 position = row_positions[(int(len(row_positions)/2)):]
@@ -27,13 +27,13 @@ def column(column_data):
     position = []
     column_positions = [cw for cw in range(8)]
     for r in range(len(column_data)):
-        # L means take LOWER half of data e.x. 0 - 3
+        # L means take LOWER half e.x. 0 - 3
         if 'L' in column_data[r]:
             if r == 0:
                 position = column_positions[:(int(len(column_positions)/2))]
             else:
                 position = position[:(int(len(position)/2))]
-        # R means take UPPER half of data e.x. 4 - 7
+        # R means take UPPER half e.x. 4 - 7
         else:
             if r == 0:
                 position = column_positions[(int(len(column_positions)/2)):]
