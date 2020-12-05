@@ -51,7 +51,7 @@ def max_seat_id():
 
 def my_seat():
     seat_dict = {}
-    columns = {0,1,2,3,4,5,6,7}
+    columns = set(range(8))
     rows = range(128)
     for r in rows:
         seat_dict[r] = []
