@@ -6,7 +6,7 @@ def get_input():
     return input
 
 fields = ['byr', 'iyr', 'eyr', 'hgt', 'hcl', 'ecl', 'pid']
-hcl = ['0','1','2','3','4','5','6','7','8','9','a','b','c','d','e','f']
+hair_colors = ['0','1','2','3','4','5','6','7','8','9','a','b','c','d','e','f']
 eye_colors = ['amb', 'blu', 'brn', 'gry', 'grn', 'hzl', 'oth']
 
 def check_passports(validation=False):    
@@ -62,7 +62,7 @@ def policy_check(data_entry):
                 elif 'hcl' in field:
                     if '#' in value[0] and len(value) == 7:
                         for s in value:
-                            if s in hcl:
+                            if s in hair_colors:
                                 valid_hcl.append(s)
                         if len(valid_hcl) == 6:
                             valid_fields.append(field)
