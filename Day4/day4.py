@@ -68,14 +68,7 @@ def policy_check(data_entry):
                     valid_fields.append(field)
                 # Passport ID
                 elif 'pid' in field and len(value) == 9:
-                    #TODO just switch to isdigit() or try/except on int conv
-                    #check that pid actually has ints 0-9 only
-                    nums = [num for num in range(10)]
-                    nums_in_pid = []
-                    for n in value:
-                        if int(n) in nums:
-                            nums_in_pid.append(n)
-                    if len(nums_in_pid) == 9:
+                    if value.isdigit():
                         valid_fields.append(field)
         if len(valid_fields) == len(fields):
             return True
