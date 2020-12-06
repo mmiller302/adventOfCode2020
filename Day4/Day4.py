@@ -24,7 +24,7 @@ def check_passports(validation=False):
                 valid_entries += 1
         else:
             fields_present = [x.split(':')[0] for x in entry if x.split(':')[0] in fields]
-            if len(field_present) >= len(fields):
+            if len(fields_present) >= len(fields):
                 valid_entries += 1
     print('Valid passports: %s' % valid_entries)
             
